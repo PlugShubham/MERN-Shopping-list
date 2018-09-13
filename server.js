@@ -29,6 +29,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/api',routes);
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     util.log("Server is listening at port 5000")
 });
