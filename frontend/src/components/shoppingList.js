@@ -22,7 +22,7 @@ class ShoppingList extends React.Component{
     }
     componentWillMount(){
         axios
-            .get('http://localhost:5000/api')
+            .get('https://shopping-list-mern-plug.herokuapp.com/api')
             .then(res=>{
                 this.setState({
                     items:res.data
@@ -38,7 +38,7 @@ class ShoppingList extends React.Component{
     onSubmit(){
         //console.log(this.state.item);
         axios
-            .post("http://localhost:5000/api",{
+            .post("https://shopping-list-mern-plug.herokuapp.com/api",{
                 "name":this.state.item
             })
             .then(res=>console.log("data is saved"))
@@ -47,7 +47,7 @@ class ShoppingList extends React.Component{
     onDelete(e){
         const itemID  = e.target.value;
         axios
-            .delete('http://localhost:5000/api/'+itemID)
+            .delete('https://shopping-list-mern-plug.herokuapp.com/api/'+itemID)
             .then((res)=>console.log(res))
             .then(()=>window.location.reload())
             .catch((err)=>console.log(err))
